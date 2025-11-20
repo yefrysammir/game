@@ -1,5 +1,0 @@
-[
-  { "id":"m1", "nombre":"Rocar", "nivel":3, "hp":28, "atk":6, "xp":18, "gold":12, "color":"#c44" },
-  { "id":"m2", "nombre":"Glimp", "nivel":4, "hp":34, "atk":7, "xp":22, "gold":16, "color":"#4aa" },
-  { "id":"m3", "nombre":"Bramble", "nivel":5, "hp":40, "atk":8, "xp":28, "gold":20, "color":"#3a5" }
-]
