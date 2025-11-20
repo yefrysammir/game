@@ -1,0 +1,126 @@
+
+/* style.css - SYAMON base + map controls + simple HUD/battle/panels */
+
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Generic screens */
+.screen {
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
+.screen.active { display: block; }
+.hidden { display: none; }
+
+.btn {
+    padding: 12px;
+    width: 80%;
+    margin: 10px 0;
+    background: #4caf50;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.small { width: 40%; }
+
+#logo {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background: linear-gradient(45deg, #333, #555);
+    border-radius: 20px;
+}
+
+/* Map area */
+#map {
+    width: 100%;
+    max-width: 720px;
+    height: 320px;
+    background: repeating-linear-gradient(
+        45deg,
+        #2b6,
+        #2b6 20px,
+        #196 20px,
+        #196 40px
+    );
+    position: relative;
+    overflow: hidden;
+    margin: 12px auto;
+    border-radius: 8px;
+    border: 3px solid rgba(255,255,255,0.04);
+}
+
+/* Player box */
+#player {
+    width: 28px;
+    height: 28px;
+    background: yellow;
+    border: 2px solid black;
+    position: absolute;
+    border-radius:6px;
+}
+
+/* HUD + controls */
+#map-hud {
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    justify-content:center;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+/* controls layout */
+#controls { display:flex; flex-direction:column; gap:6px; align-items:center; }
+#controls .row { display:flex; gap:6px; align-items:center; }
+.ctrl {
+    width:56px;
+    height:48px;
+    border-radius:8px;
+    background:#333;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* mini-player */
+.mini-player { width:40px; height:40px; background:yellow; border-radius:6px; border:2px solid black; }
+
+/* encounter box */
+#encounter-box {
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    min-width:200px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:center;
+}
+#encounter-text { margin:0; color:#ffcc00; font-weight:700; }
+
+/* battle UI */
+.enemy-box { width:160px; height:120px; background:#c44; border-radius:8px; display:inline-block; margin-right:10px; }
+.team-box { width:320px; height:120px; background:#263; border-radius:8px; display:inline-block; vertical-align:top; }
+
+.battle-options { margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+.battle-log { background:rgba(255,255,255,0.03); padding:8px; border-radius:8px; max-height:160px; overflow:auto; text-align:left; white-space:pre-wrap; }
+
+/* lists */
+ul { list-style:none; padding:0; margin:0 auto; max-width:640px; text-align:left; }
+li { padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.02); }
+
+/* responsive */
+@media (max-width:640px) {
+    #map { height:260px; }
+    .ctrl { width:44px; height:40px; font-size:16px; }
+    #player { width:22px; height:22px; }
+}
