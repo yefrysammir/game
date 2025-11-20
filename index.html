@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYAMON</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- PANTALLA INICIO -->
+    <section id="screen-start" class="screen active">
+        <div id="logo"></div>
+        <button class="btn" onclick="UI.newGameConfirm()">Nueva partida</button>
+        <button class="btn" onclick="UI.loadGame()">Retomar partida</button>
+    </section>
+
+    <!-- CONFIRMACIÓN (oculto por defecto) -->
+    <section id="screen-confirm" class="screen hidden">
+        <p>¿Seguro deseas borrar tu partida?</p>
+        <button id="confirm-yes" class="btn">Sí</button>
+        <button id="confirm-no" class="btn">No</button>
+    </section>
+
+    <!-- LOBBY -->
+    <section id="screen-lobby" class="screen hidden">
+        <h2>Lobby</h2>
+        <button class="btn" onclick="UI.goToMap()">Entrar al Mapa</button>
+        <button class="btn" onclick="UI.openPokedex()">Pokedex</button>
+        <button class="btn" onclick="UI.openInventory()">Inventario</button>
+        <button class="btn" onclick="UI.openShop()">Tienda</button>
+        <button class="btn" onclick="UI.goBackToStart()">Salir</button>
+    </section>
+
+    <!-- MAPA -->
+    <section id="screen-map" class="screen hidden">
+        <div id="map">
+            <div id="player"></div>
+        </div>
+
+        <div id="map-hud">
+            <div id="controls">
+                <div class="row">
+                    <button class="ctrl" data-dir="up-left">↖</button>
+                    <button class="ctrl" data-dir="up">▲</button>
+                    <button class="ctrl" data-dir="up-right">↗</button>
+                </div>
+                <div class="row">
+                    <button class="ctrl" data-dir="left">◀</button>
+                    <div id="mini-player" class="mini-player"></div>
+                    <button class="ctrl" data-dir="right">▶</button>
+                </div>
+                <div class="row">
+                    <button class="ctrl" data-dir="down-left">↙</button>
+                    <button class="ctrl" data-dir="down">▼</button>
+                    <button class="ctrl" data-dir="down-right">↘</button>
+                </div>
+            </div>
+
+            <div id="encounter-box">
+                <p id="encounter-text">No se encontró nada.</p>
+                <button id="btn-fight" class="btn small" style="display:none">Pelear</button>
+            </div>
+        </div>
+
+        <button class="btn small" onclick="UI.goToLobby()" id="btn-map-back">Volver</button>
+    </section>
+
+    <!-- BATALLA -->
+    <section id="screen-battle" class="screen hidden">
+        <h2 id="battle-title">BATALLA</h2>
+
+        <div id="battle-area">
+            <div id="enemy" class="enemy-box"></div>
+            <div id="team" class="team-box"></div>
+        </div>
+
+        <div id="battle-options" class="battle-options">
+            <button id="btn-attack" class="btn small">Atacar</button>
+            <button id="btn-catch" class="btn small">Capturar</button>
+            <button id="btn-run" class="btn small">Huir</button>
+            <button id="btn-battle-back" class="btn small">Volver al mapa</button>
+        </div>
+        <pre id="battle-log" class="battle-log"></pre>
+    </section>
+
+    <!-- POKEDEX -->
+    <section id="screen-pokedex" class="screen hidden">
+        <h2>Pokedex</h2>
+        <ul id="list-pokedex"></ul>
+        <button class="btn small" onclick="UI.goToLobby()">Volver</button>
+    </section>
+
+    <!-- INVENTARIO -->
+    <section id="screen-inventory" class="screen hidden">
+        <h2>Inventario</h2>
+        <p>Dinero: <span id="inv-money">0</span></p>
+        <ul id="list-inventory"></ul>
+        <button class="btn small" onclick="UI.goToLobby()">Volver</button>
+    </section>
+
+    <!-- TIENDA -->
+    <section id="screen-shop" class="screen hidden">
+        <h2>Tienda</h2>
+        <ul id="list-shop"></ul>
+        <button class="btn small" onclick="UI.goToLobby()">Volver</button>
+    </section>
+
+</div>
+
+<!-- Scripts: respeta el orden -->
+<script src="js/storage.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/map.js"></script>
+<script src="js/battle.js"></script>
+
+<!-- módulos añadidos -->
+<script src="js/pokedex.js"></script>
+<script src="js/inventory.js"></script>
+<script src="js/shop.js"></script>
+
+</body>
+</html>
