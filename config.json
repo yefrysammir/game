@@ -1,0 +1,7 @@
+{
+  "encounterRate": 0.50,
+  "shop": [
+    { "id":"pokeball", "name":"Pokebola", "price":50 },
+    { "id":"potion", "name":"Poción", "price":30 }
+  ]
+}
